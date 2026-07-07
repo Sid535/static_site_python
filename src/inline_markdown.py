@@ -8,8 +8,8 @@ def text_to_textnodes(text: str) -> list[TextNode, TextNode]:
     italic_nodes = split_nodes_delimiter(bold_nodes, "_", TextType.ITALIC)
     code_nodes = split_nodes_delimiter(italic_nodes, "`", TextType.CODE)
     img_nodes = split_nodes_image(code_nodes)
-    new_node = split_nodes_link(img_nodes)
-    return new_node
+    link_node = split_nodes_link(img_nodes)
+    return link_node
 
 def split_nodes_delimiter(old_nodes: list[TextNode], delimiter: str, text_type: TextType) -> list[TextNode]:
     new_nodes = []
